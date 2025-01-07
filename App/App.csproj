@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Description>An entry point for a modular monolith architecture</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.6"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AppointmentBooking.Application\AppointmentBooking.Application.csproj" />
+      <ProjectReference Include="..\AppointmentBooking.Domain\AppointmentBooking.Domain.csproj" />
+      <ProjectReference Include="..\AppointmentBooking.Infrastructure\AppointmentBooking.Infrastructure.csproj" />
+      <ProjectReference Include="..\AppointmentBooking.Presentation\AppointmentBooking.Presentation.csproj" />
+      <ProjectReference Include="..\AppointmentBooking.Shared\AppointmentBooking.Shared.csproj" />
+      <ProjectReference Include="..\DoctorAppointmentManagement.Adapters\DoctorAppointmentManagement.Adapters.csproj" />
+      <ProjectReference Include="..\DoctorAppointmentManagement.Core\DoctorAppointmentManagement.Core.csproj" />
+      <ProjectReference Include="..\DoctorAvailability.Business\DoctorAvailability.Business.csproj" />
+      <ProjectReference Include="..\DoctorAvailability.Data\DoctorAvailability.Data.csproj" />
+      <ProjectReference Include="..\DoctorAvailability.Presentation\DoctorAvailability.Presentation.csproj" />
+      <ProjectReference Include="..\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj" />
+      <ProjectReference Include="..\Shared\Shared.csproj" />
+    </ItemGroup>
+
+</Project>
