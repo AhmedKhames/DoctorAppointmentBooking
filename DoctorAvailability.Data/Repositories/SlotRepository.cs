@@ -16,7 +16,10 @@ public class SlotRepository
     {
         return _context.Slots.Where(s => s.DoctorId == doctorId).ToListAsync();
     }
-
+    public Task<List<Slot>> GetAvailableSlotsAsync()
+    {
+        return _context.Slots.Where(s => !s.IsReserved).ToListAsync();
+    }
     public bool CreateSlot(Slot slot)
     {
         _context.Slots.Add(slot);

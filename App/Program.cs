@@ -1,5 +1,5 @@
-using DoctorAvailability.Business.Extensions;
-using DoctorAvailability.Data.Extensions;
+using App.Extensions;
+using AppointmentBooking.Presentation.Endpoints;
 using DoctorAvailability.Presentation.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,9 +10,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.ConfigureData();
-builder.Services.ConfigureBusiness();
-
+builder.Services.AddDoctorAvailabilityModules();
+builder.Services.AddAppointmentsBookingModules();
 
 var app = builder.Build();
 
@@ -25,6 +24,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapSlotsApiV1();
+app.MapSlotsApis();
+app.MapAppointmentApis();
 app.Run();
 

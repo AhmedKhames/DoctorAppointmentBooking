@@ -10,7 +10,7 @@ public static class ServiceExtensions
     {
         services.AddDbContext<DoctorAvailabilityDbContext>(options =>
         {
-            options.UseInMemoryDatabase("DoctorAvailability");
+            options.UseInMemoryDatabase("DoctorBookings");
         });
         services.AddScoped<SlotRepository>();
     }

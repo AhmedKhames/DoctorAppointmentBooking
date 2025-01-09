@@ -11,9 +11,9 @@ namespace DoctorAvailability.Presentation.Endpoints;
 
 public static class SlotsEndpoints
 {
-    public static RouteGroupBuilder MapSlotsApiV1(this IEndpointRouteBuilder app)
+    public static RouteGroupBuilder MapSlotsApis(this IEndpointRouteBuilder app)
     {
-        var api = app.MapGroup("api/orders");
+        var api = app.MapGroup("api/slot");
 
         api.MapGet("/", GetAllDoctorSlotsAsync);
         api.MapPost("/create-slot", CreateDoctorSlotAsync);
@@ -25,7 +25,7 @@ public static class SlotsEndpoints
     {
         if (request.DoctorId == Guid.Empty)
         {
-            logger.LogWarning("Invalid IntegrationEvent - doctor id is missing - {@IntegrationEvent}", request);
+            logger.LogWarning("Invalid request - doctor id is missing - {@Request}", request);
             return TypedResults.BadRequest("doctor id is missing.");
         }
 
