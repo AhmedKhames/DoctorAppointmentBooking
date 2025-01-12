@@ -19,7 +19,21 @@ public class SlotsServiceApi : ISlotsServiceApi
         try
         {
             var slots = await _slotRepository.GetAvailableSlotsAsync();
-            return slots.Select(s => new SlotsResponse(s.DoctorId, s.Time, s.DoctorName, s.Cost, s.IsReserved));
+            return slots.Select(s => new SlotsResponse(s.Id,s.DoctorId, s.Time, s.DoctorName, s.Cost, s.IsReserved));
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return new List<SlotsResponse>();
+        }
+    }
+
+    public async Task<IEnumerable<SlotsResponse>> GetDoctorSlotsAsync(Guid doctorId)
+    {
+        try
+        {
+            var slots = await _slotRepository.GetAllBySlotsAsync(doctorId);
+            return slots.Select(s => new SlotsResponse(s.Id,s.DoctorId, s.Time, s.DoctorName, s.Cost, s.IsReserved));
         }
         catch (Exception e)
         {

@@ -18,13 +18,14 @@
       <ProjectReference Include="..\AppointmentBooking.Infrastructure\AppointmentBooking.Infrastructure.csproj" />
       <ProjectReference Include="..\AppointmentBooking.Presentation\AppointmentBooking.Presentation.csproj" />
       <ProjectReference Include="..\AppointmentBooking.Shared\AppointmentBooking.Shared.csproj" />
-      <ProjectReference Include="..\DoctorAppointmentManagement.Adapters\DoctorAppointmentManagement.Adapters.csproj" />
+      <ProjectReference Include="..\DoctorAppointmentManagement.Infrastructure.Adapters\DoctorAppointmentManagement.Infrastructure.Adapters.csproj" />
+      <ProjectReference Include="..\DoctorAppointmentManagement.Presentation.Adapters\DoctorAppointmentManagement.Presentation.Adapters.csproj" />
       <ProjectReference Include="..\DoctorAppointmentManagement.Core\DoctorAppointmentManagement.Core.csproj" />
+      <ProjectReference Include="..\DoctorAppointmentManagement.Presentation\DoctorAppointmentManagement.Presentation.csproj" />
       <ProjectReference Include="..\DoctorAvailability.Business\DoctorAvailability.Business.csproj" />
       <ProjectReference Include="..\DoctorAvailability.Data\DoctorAvailability.Data.csproj" />
       <ProjectReference Include="..\DoctorAvailability.Presentation\DoctorAvailability.Presentation.csproj" />
       <ProjectReference Include="..\DoctorAvailability.Shared\DoctorAvailability.Shared.csproj" />
-      <ProjectReference Include="..\Shared\Shared.csproj" />
     </ItemGroup>
 
 </Project>

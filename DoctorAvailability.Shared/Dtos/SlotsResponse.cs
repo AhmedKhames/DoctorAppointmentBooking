@@ -1,4 +1,4 @@
 namespace DoctorAvailability.Shared.Dtos;
 
 
-public record SlotsResponse(Guid DoctorId, DateTime Time, string DoctorName, decimal Cost, bool IsReserved);
+public record SlotsResponse(Guid SlotId,Guid DoctorId, DateTime Time, string DoctorName, decimal Cost, bool IsReserved);

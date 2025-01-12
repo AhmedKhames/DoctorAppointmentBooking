@@ -28,17 +28,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentBooking.Presentation", "AppointmentBooking.Presentation\AppointmentBooking.Presentation.csproj", "{B9DC978C-62E1-4D6C-BFAD-5473607772F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAppointmentManagement.Adapters", "DoctorAppointmentManagement.Adapters\DoctorAppointmentManagement.Adapters.csproj", "{5A9FD4B6-4B44-4BE9-9568-80E8438A47E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAppointmentManagement.Presentation.Adapters", "DoctorAppointmentManagement.Presentation.Adapters\DoctorAppointmentManagement.Presentation.Adapters.csproj", "{5A9FD4B6-4B44-4BE9-9568-80E8438A47E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAvailability.Presentation", "DoctorAvailability.Presentation\DoctorAvailability.Presentation.csproj", "{9FB2C228-7E33-4799-9296-D66FCA46C3CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{5D7A173C-5B90-414E-9402-614E3366E514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{F74B934D-3441-461D-A4AF-A75C4EF0AC96}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{BC7CD1BF-6AA7-4D73-9F23-32784A767788}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9A47F084-B673-4A36-B4FC-839EAFF6027C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAppointmentManagement.Presentation", "DoctorAppointmentManagement.Presentation\DoctorAppointmentManagement.Presentation.csproj", "{F4EF6D1D-2E67-4F94-8567-4C3F385F5FC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoctorAppointmentManagement.Infrastructure.Adapters", "DoctorAppointmentManagement.Infrastructure.Adapters\DoctorAppointmentManagement.Infrastructure.Adapters.csproj", "{D7AC0A41-DA85-4961-9630-C6C869F1FF3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -94,10 +96,14 @@ Global
 		{9FB2C228-7E33-4799-9296-D66FCA46C3CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FB2C228-7E33-4799-9296-D66FCA46C3CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FB2C228-7E33-4799-9296-D66FCA46C3CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F74B934D-3441-461D-A4AF-A75C4EF0AC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F74B934D-3441-461D-A4AF-A75C4EF0AC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F74B934D-3441-461D-A4AF-A75C4EF0AC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F74B934D-3441-461D-A4AF-A75C4EF0AC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4EF6D1D-2E67-4F94-8567-4C3F385F5FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EF6D1D-2E67-4F94-8567-4C3F385F5FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EF6D1D-2E67-4F94-8567-4C3F385F5FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EF6D1D-2E67-4F94-8567-4C3F385F5FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AC0A41-DA85-4961-9630-C6C869F1FF3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AC0A41-DA85-4961-9630-C6C869F1FF3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AC0A41-DA85-4961-9630-C6C869F1FF3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AC0A41-DA85-4961-9630-C6C869F1FF3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{85AD8678-EF91-4CB0-8140-169F572BFE23} = {9A2E4422-BE3B-4A7F-900D-46C4FBF4EC60}
@@ -117,6 +123,7 @@ Global
 		{E723582C-00F4-46B1-855E-1D1622C17433} = {5D7A173C-5B90-414E-9402-614E3366E514}
 		{5D7A173C-5B90-414E-9402-614E3366E514} = {BC7CD1BF-6AA7-4D73-9F23-32784A767788}
 		{42EC0C3E-2BCD-46E5-ADC5-A565CC1F1AD1} = {BC7CD1BF-6AA7-4D73-9F23-32784A767788}
-		{F74B934D-3441-461D-A4AF-A75C4EF0AC96} = {BC7CD1BF-6AA7-4D73-9F23-32784A767788}
+		{F4EF6D1D-2E67-4F94-8567-4C3F385F5FC3} = {3590E75B-79A7-4692-94D3-EE1E4DAB968E}
+		{D7AC0A41-DA85-4961-9630-C6C869F1FF3B} = {3590E75B-79A7-4692-94D3-EE1E4DAB968E}
 	EndGlobalSection
 EndGlobal

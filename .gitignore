@@ -12,6 +12,12 @@
 /DoctorAppointmentManagement.Core/obj
 /DoctorAppointmentManagement.Adapters/bin
 /DoctorAppointmentManagement.Core/bin
+/DoctorAppointmentManagement.Presentation/obj
+/DoctorAppointmentManagement.Presentation/bin
+/DoctorAppointmentManagement.Presentation.Adapters/obj
+/DoctorAppointmentManagement.Presentation.Adapters/bin
+/DoctorAppointmentManagement.Infrastructure.Adapters/obj
+/DoctorAppointmentManagement.Infrastructure.Adapters/bin
 /DoctorAvailability.Shared/obj
 /DoctorAvailability.Data/obj
 /DoctorAvailability.Business/obj

@@ -1,5 +1,7 @@
 using AppointmentBooking.Application.Extensions;
 using AppointmentBooking.Infrastructure.Extensions;
+using DoctorAppointmentManagement.Infrastructure.Adapters.Extensions;
+using DoctorAppointmentManagement.Presentation.Adapters.Extensions;
 using DoctorAvailability.Business.Extensions;
 using DoctorAvailability.Data.Extensions;
 
@@ -16,5 +18,10 @@ public static class ModulesExtensions
     {
         services.ConfigureInfrastructure();
         services.AddApplicationServices();
+    } 
+    public static void AddAppointmentsManagementModules(this IServiceCollection services)
+    {
+        services.ConfigureInfrastructureAdapters();
+        services.ConfigurePresentationAdapters();
     } 
 }

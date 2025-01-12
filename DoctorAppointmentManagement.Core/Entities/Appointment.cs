@@ -1,6 +1,6 @@
-using AppointmentBooking.Domain.Enums;
+using DoctorAppointmentManagement.Core.Enums;
 
-namespace AppointmentBooking.Domain.Entities;
+namespace DoctorAppointmentManagement.Core.Entities;
 
 public class Appointment
 {
