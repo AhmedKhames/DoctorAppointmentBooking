@@ -1,16 +1,16 @@
 using AppointmentBooking.Domain.Entities;
 using AppointmentBooking.Domain.Repositories;
+using AppointmentConfirmation.Shared.Contracts;
+using AppointmentConfirmation.Shared.Dtos;
+using DoctorAvailability.Shared.Contracts;
 
 namespace AppointmentBooking.Application.Command;
 
-public class BookAppointmentCommandHandler
+public class BookAppointmentCommandHandler(
+    IAppointmentRepository appointmentRepository,
+    IAppointmentConfirmationHandler appointmentConfirmationHandler,
+    ISlotsServiceApi slotsServiceApi)
 {
-    private readonly IAppointmentRepository _appointmentRepository;
-
-    public BookAppointmentCommandHandler(IAppointmentRepository appointmentRepository)
-    {
-        _appointmentRepository = appointmentRepository;
-    }
     public async Task<bool> Handle(BookAppointmentCommand command)
     {
         try
@@ -21,8 +21,11 @@ public class BookAppointmentCommandHandler
                 SlotId = command.SlotId,
                 PatientName = command.PatientName
             };
-            await _appointmentRepository.ReserveAppointment(appointment);
-            //TODO: send domain event to notification service so that it can notify the patient and the doctor
+            var createdAppointment = await appointmentRepository.ReserveAppointment(appointment);
+            var slotDetails = await slotsServiceApi.GetSlotByIdAsync(command.SlotId);
+            _ = appointmentConfirmationHandler.SendConfirmationAsync(new AppointmentsCreatedEvent(
+                createdAppointment.AppointmentId, createdAppointment.PatientName, slotDetails.Time,
+                slotDetails.DoctorName));
             return true;
         }
         catch (Exception e)

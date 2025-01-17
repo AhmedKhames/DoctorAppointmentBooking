@@ -31,5 +31,9 @@
 /App/obj
 /Shared/bin
 /Shared/obj
+/AppointmentConfirmation.EventHandler/obj
+/AppointmentConfirmation.EventHandler/bin
+/AppointmentConfirmation.Shared/obj
+/AppointmentConfirmation.Shared/bin
 /App/Properties/launchSettings.json
 /global.json

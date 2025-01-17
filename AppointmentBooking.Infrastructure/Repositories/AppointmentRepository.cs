@@ -7,10 +7,10 @@ namespace AppointmentBooking.Infrastructure.Repositories;
 
 public class AppointmentRepository(DoctorAppointmentDbContext context) : IAppointmentRepository
 {
-    public async Task<bool> ReserveAppointment(Appointment appointment)
+    public async Task<Appointment> ReserveAppointment(Appointment appointment)
     {
-        context.Appointments.Add(appointment);
-        return (await context.SaveChangesAsync()) > 0;
+        await context.Appointments.AddAsync(appointment);
+        return appointment;
     }
 
     public Task<List<Appointment>> GetSlotUpcommingAppointments(Guid slotId)

@@ -19,7 +19,7 @@ public class SlotsServiceApi : ISlotsServiceApi
         try
         {
             var slots = await _slotRepository.GetAvailableSlotsAsync();
-            return slots.Select(s => new SlotsResponse(s.Id,s.DoctorId, s.Time, s.DoctorName, s.Cost, s.IsReserved));
+            return slots.Select(s => new SlotsResponse(s.Id, s.DoctorId, s.Time, s.DoctorName, s.Cost, s.IsReserved));
         }
         catch (Exception e)
         {
@@ -33,12 +33,31 @@ public class SlotsServiceApi : ISlotsServiceApi
         try
         {
             var slots = await _slotRepository.GetAllBySlotsAsync(doctorId);
-            return slots.Select(s => new SlotsResponse(s.Id,s.DoctorId, s.Time, s.DoctorName, s.Cost, s.IsReserved));
+            return slots.Select(s => new SlotsResponse(s.Id, s.DoctorId, s.Time, s.DoctorName, s.Cost, s.IsReserved));
         }
         catch (Exception e)
         {
             Console.WriteLine(e);
             return new List<SlotsResponse>();
+        }
+    }
+
+    public async Task<SlotsResponse> GetSlotByIdAsync(Guid slotId)
+    {
+        try
+        {
+            var slot = await _slotRepository.GetSlotByIdAsync(slotId);
+            if (slot is null)
+            {
+                return null;
+            }
+
+            return new SlotsResponse(slot.Id, slot.DoctorId, slot.Time, slot.DoctorName, slot.Cost, slot.IsReserved);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return null;
         }
     }
 }

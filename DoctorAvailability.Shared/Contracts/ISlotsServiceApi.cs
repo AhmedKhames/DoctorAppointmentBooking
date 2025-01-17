@@ -6,4 +6,5 @@ public interface ISlotsServiceApi
 {
     Task<IEnumerable<SlotsResponse>> GetAllAvailableSlotsAsync();
     Task<IEnumerable<SlotsResponse>> GetDoctorSlotsAsync(Guid doctorId);
+    Task<SlotsResponse> GetSlotByIdAsync(Guid slotId);
 }

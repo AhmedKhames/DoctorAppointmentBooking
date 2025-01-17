@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDoctorAvailabilityModules();
 builder.Services.AddAppointmentsBookingModules();
 builder.Services.AddAppointmentsManagementModules();
-
+builder.Services.AddConfigureEventHandler();
 
 var app = builder.Build();
 

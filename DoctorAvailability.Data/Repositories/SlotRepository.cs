@@ -25,4 +25,8 @@ public class SlotRepository
         _context.Slots.Add(slot);
         return _context.SaveChanges() > 0;
     }
+    public Task<Slot> GetSlotByIdAsync(Guid slotId)
+    {
+        return _context.Slots.FirstOrDefaultAsync(s => s.Id == slotId);
+    }
 }

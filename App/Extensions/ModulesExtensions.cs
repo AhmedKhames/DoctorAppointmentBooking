@@ -1,5 +1,6 @@
 using AppointmentBooking.Application.Extensions;
 using AppointmentBooking.Infrastructure.Extensions;
+using AppointmentConfirmation.EventHandler.Extensions;
 using DoctorAppointmentManagement.Infrastructure.Adapters.Extensions;
 using DoctorAppointmentManagement.Presentation.Adapters.Extensions;
 using DoctorAvailability.Business.Extensions;
@@ -24,4 +25,8 @@ public static class ModulesExtensions
         services.ConfigureInfrastructureAdapters();
         services.ConfigurePresentationAdapters();
     } 
+    public static void AddConfigureEventHandler(this IServiceCollection services)
+    {
+        services.ConfigureEventHandler();
+    }
 }
